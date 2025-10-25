@@ -1,6 +1,6 @@
 # react-firebase-blog
 
-[PokeAPI](https://pokeapi.co/)を使って React で実装したポケモン図鑑のリポジトリです。
+ReactとFirebaseで実装したブログのリポジトリです。
 
 ## プロジェクトの新規作成方法
 
