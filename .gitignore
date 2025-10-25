@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+react-firebase-blog/node_modules
+react-firebase-blog/.pnp
+react-firebase-blog/.pnp.js
+
+# testing
+react-firebase-blog/coverage
+
+# production
+react-firebase-blog/build
+
+# misc
+react-firebase-blog/.DS_Store
+react-firebase-blog/.env.local
+react-firebase-blog/.env.development.local
+react-firebase-blog/.env.test.local
+react-firebase-blog/.env.production.local
+
+react-firebase-blog/npm-debug.log*
+react-firebase-blog/yarn-debug.log*
+react-firebase-blog/yarn-error.log*

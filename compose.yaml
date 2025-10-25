@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./react-firebase-blog:/react-firebase-blog
+    ports:
+      - 3000:3000
+    tty: true
+    stdin_open: true
