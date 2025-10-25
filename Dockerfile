@@ -3,10 +3,10 @@ FROM node:18
 
 WORKDIR /react-firebase-blog
 
-# COPY react-firebase-blog/package*.json ./
+COPY react-firebase-blog/package*.json ./
 
-# RUN npm install
+RUN npm install
 
-# EXPOSE 3000
+EXPOSE 3000
 
-# CMD ["npm", "start"]
+CMD ["npm", "start"]

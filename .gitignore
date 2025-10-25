@@ -21,3 +21,6 @@ react-firebase-blog/.env.production.local
 react-firebase-blog/npm-debug.log*
 react-firebase-blog/yarn-debug.log*
 react-firebase-blog/yarn-error.log*
+
+# 認証情報
+react-firebase-blog/src/firebase.js
