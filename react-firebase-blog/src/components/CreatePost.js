@@ -1,13 +1,31 @@
 import React, { useState } from 'react'
 import "./CreatePost.css"
+import {addDoc, collection} from "firebase/firestore"
+import {auth, db} from "../firebase"
+import { useNavigate } from 'react-router-dom'
 
 const CreatePost = () => {
   const [title, setTitle] = useState();
   const [postText, setPostText] = useState();
 
-  const createPost = () => {
-    console.log(title);
-    console.log(postText);
+  const navigate = useNavigate();
+
+  const createPost = async () => {
+    if (!auth.currentUser) {
+      alert("投稿するにはログインが必要です。");
+      return;
+    }
+
+    await addDoc(collection(db, "posts"), {
+      titleText: title,
+      postsText: postText,
+      author: {
+        username: auth.currentUser.displayName || "",
+        id: auth.currentUser.uid
+      }
+    })
+
+    navigate("/");
   };
 
   return (
