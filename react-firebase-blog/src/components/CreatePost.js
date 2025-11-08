@@ -1,21 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./CreatePost.css"
 import {addDoc, collection} from "firebase/firestore"
 import {auth, db} from "../firebase"
 import { useNavigate } from 'react-router-dom'
 
-const CreatePost = () => {
+const CreatePost = ({isAuth}) => {
   const [title, setTitle] = useState();
   const [postText, setPostText] = useState();
 
   const navigate = useNavigate();
 
   const createPost = async () => {
-    if (!auth.currentUser) {
-      alert("投稿するにはログインが必要です。");
-      return;
-    }
-
     await addDoc(collection(db, "posts"), {
       titleText: title,
       postsText: postText,
@@ -27,6 +22,12 @@ const CreatePost = () => {
 
     navigate("/");
   };
+
+  useEffect(() => {
+    if(!isAuth) {
+      navigate("/login")
+    }
+  }, [])
 
   return (
     <div className="createPostPage">
